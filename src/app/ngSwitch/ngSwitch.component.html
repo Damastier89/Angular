@@ -1,0 +1,10 @@
+<h1>*ngSwitch</h1>
+
+<button (click)="toggle = !toggle">Toggle_Color</button>
+<button (click)="toggle = 2">Toggle default</button>
+
+<div [ngSwitch]="toggle">
+  <p *ngSwitchCase="true" class="red">Lorem, ipsum.</p>
+  <p *ngSwitchCase="false" class="black">Lorem, ipsum dolor.</p>
+  <p *ngSwitchDefault>Lorem, ipsum dolor.Lorem, ipsum dolor.</p>
+</div>

@@ -1,0 +1,8 @@
+<h1>*ngIF</h1>
+<button (click)="toggle = !toggle">Togglr_Color</button>
+
+<p *ngIf="toggle; else blackP" class="red">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    <ng-template #blackP>
+        <p class="black">Lorem ipsum dolor sit amet consectetur adipisicing.</p> 
+    </ng-template>
+

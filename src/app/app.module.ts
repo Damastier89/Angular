@@ -4,16 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PartComponent } from './part/part.component';
-import { Part1Component } from './part1/part1.component';
+import { NgIFComponent } from './ngIF/ngIF.component';
+import { NgSwitchComponent } from './ngSwitch/ngSwitch.component';
+import { NgForComponent } from './ngFor/ngFor.component';
+import { NgClassAndStyleComponent } from './ngClassAndStyle/ngClassAndStyle.component';
+import { PipComponent } from './Pip/Pip.component';
 
 
 @NgModule({
-  declarations: [
+  declarations: [						
     AppComponent,
     PostComponent,
     PartComponent,
-    Part1Component
-  ],
+      NgIFComponent,
+      NgSwitchComponent,
+      NgForComponent,
+      NgClassAndStyleComponent,
+      PipComponent
+   ],
   imports: [
     BrowserModule
   ],

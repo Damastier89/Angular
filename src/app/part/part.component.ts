@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./part.component.scss']
 })
 export class PartComponent implements OnInit {
-
+  
+  someText = '';
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public onClick() {
+    this.someText = 'Hello Some text';
+  }
 }

@@ -1,0 +1,17 @@
+<h1>*ngFor</h1>
+
+<ul style="list-style: none">
+  <li *ngFor="let num of arr; let i = index" >
+      <p>{{i + 1}}{{" "}}<strong>{{num}}</strong></p>
+  </li>
+</ul>
+<ul style="list-style: none">
+ <li *ngFor="let post of obj">
+     <strong>{{post.title}} <p>{{post.author}}</p> </strong>      
+     <ul>
+         <li *ngFor="let comment of post.comments">
+             <strong>{{comment.name}} <p>{{comment.text}}</p> </strong>
+         </li>
+     </ul>
+ </li>
+</ul>
