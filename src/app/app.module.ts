@@ -9,10 +9,12 @@ import { NgSwitchComponent } from './ngSwitch/ngSwitch.component';
 import { NgForComponent } from './ngFor/ngFor.component';
 import { NgClassAndStyleComponent } from './ngClassAndStyle/ngClassAndStyle.component';
 import { PipComponent } from './Pip/Pip.component';
+import { UsersComponent } from './users/users.component';
+
 
 
 @NgModule({
-  declarations: [						
+  declarations: [								
     AppComponent,
     PostComponent,
     PartComponent,
@@ -20,7 +22,8 @@ import { PipComponent } from './Pip/Pip.component';
       NgSwitchComponent,
       NgForComponent,
       NgClassAndStyleComponent,
-      PipComponent
+      PipComponent,
+      UsersComponent,
    ],
   imports: [
     BrowserModule
