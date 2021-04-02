@@ -19,16 +19,16 @@ export class UsersComponent implements OnInit {
     { id: 5, name: 'Anna', age: 24, deposit: 4250}
   ]
 
-  costumer: User[] = this.userArr
+  /* costumer: User[] = this.userArr */
 
   constructor() { }
 
-  public getUserName(): any {
-    return this.costumer.map(user => user.name);
+  public getUserName() {
+    return this.userArr.map(user => user.name).join(', ');
   }
 
   public getUserDeposit() {
-    return this.costumer.reduce((acc ,user) => acc + user.deposit, 0 );
+    return this.userArr.reduce((acc ,user) => acc += user.deposit, 0 );
   }
   
   ngOnInit() {
