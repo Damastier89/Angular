@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
   constructor() { }
 
   public getUserName() {
-    return this.userArr.map(user => user.name);
+    return this.userArr.map(user => user.name).join(', ');
   }
 
   public getUserDeposit() {

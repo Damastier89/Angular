@@ -1,5 +1,5 @@
 <h1>*ngIF</h1>
-<button (click)="toggle = !toggle">Togglr_Color</button>
+<button mat-raised-button color="primary" (click)="toggle = !toggle">Togglr_Color</button>
 
 <p *ngIf="toggle; else blackP" class="red">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
     <ng-template #blackP>
