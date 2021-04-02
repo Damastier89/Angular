@@ -24,13 +24,13 @@ export class UsersComponent implements OnInit {
   constructor() { }
 
   public getUserName() {
-    return this.userArr.map(user => user.name).join(', ');
+    return this.userArr.map(user => user.name);
   }
 
   public getUserDeposit() {
     return this.userArr.reduce((acc ,user) => acc += user.deposit, 0 );
   }
-  
+
   ngOnInit() {
   }
 

@@ -10,11 +10,12 @@ import { NgForComponent } from './ngFor/ngFor.component';
 import { NgClassAndStyleComponent } from './ngClassAndStyle/ngClassAndStyle.component';
 import { PipComponent } from './Pip/Pip.component';
 import { UsersComponent } from './users/users.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
-  declarations: [								
+  declarations: [
     AppComponent,
     PostComponent,
     PartComponent,
@@ -26,7 +27,10 @@ import { UsersComponent } from './users/users.component';
       UsersComponent,
    ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
