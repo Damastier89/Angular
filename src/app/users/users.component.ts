@@ -19,15 +19,15 @@ export class UsersComponent implements OnInit {
     { id: 5, name: 'Anna', age: 24, deposit: 4250}
   ]
 
-  /* costumer: User[] = this.userArr */
+  costumer: User[] = this.userArr
 
   constructor() { }
 
-  public getUserName() {
+  public getUserName(): string {
     return this.userArr.map(user => user.name).join(', ');
   }
 
-  public getUserDeposit() {
+  public getUserDeposit(): number {
     return this.userArr.reduce((acc ,user) => acc += user.deposit, 0 );
   }
 

@@ -1,0 +1,9 @@
+<mat-form-field>
+  <mat-label>Календарь</mat-label>
+  <mat-date-range-input [rangePicker]="piker">
+    <input matStartDate />
+    <input matEndDate />
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="piker"></mat-datepicker-toggle>
+  <mat-date-range-picker #piker></mat-date-range-picker>
+</mat-form-field>

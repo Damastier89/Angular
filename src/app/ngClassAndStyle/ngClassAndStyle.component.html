@@ -1,18 +1,27 @@
-<button mat-raised-button color="primary" (click)="toggle = !toggle">Togglr_Color</button>
+<button mat-raised-button color="primary" (click)="toggle = !toggle">
+  Togglr_Color
+</button>
 
-<div [ngStyle]="{
-width: '200px',
-height: '200px',
-borderRadius: '5px',
-border: '1px solid #ccc',
-margin: '10px',
-background: toggle ? 'red' : 'black'
-}">
-</div>
+<div
+  [ngStyle]="{
+    width: '200px',
+    height: '200px',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    margin: '10px',
+    background: toggle ? 'red' : 'black'
+  }"
+></div>
 
-<p [ngClass]="{
-red: toggle,
-black: !toggle
-}">Lorem ipsum dolor sit amet consectetur adipisicing!!!!!</p>
+<p
+  [ngClass]="{
+    red: toggle,
+    black: !toggle
+  }"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing!!!!!
+</p>
 
-<p [class.red]="toggle" [class.black]="!toggle">Lorem ipsum dolor sit, amet consectetur adipisicing!!!</p>
+<p [class.red]="toggle" [class.black]="!toggle">
+  Lorem ipsum dolor sit, amet consectetur adipisicing!!!
+</p>

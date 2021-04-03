@@ -16,9 +16,11 @@ import {MatIconModule} from '@angular/material/icon';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { DatepickerComponent } from './datepicker/datepicker.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     PostComponent,
     PartComponent,
@@ -28,6 +30,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       NgClassAndStyleComponent,
       PipComponent,
       UsersComponent,
+      DatepickerComponent
    ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatDatepickerModule,
     MatFormFieldModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
