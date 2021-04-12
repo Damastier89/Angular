@@ -19,7 +19,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { ServiceModulComponent } from './service-modul/service-modul.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { CountService } from './service/count.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { PostFormComponent } from './post-form/post-form.component';
       PipComponent,
       UsersComponent,
       DatepickerComponent,
-      PostFormComponent
+      PostFormComponent,
+      ServiceModulComponent,
    ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { PostFormComponent } from './post-form/post-form.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    CountService
   ],
   providers: [],
   bootstrap: [AppComponent]
