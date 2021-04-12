@@ -1,0 +1,17 @@
+<input
+  type="text"
+  class="form-control"
+  placeholder="Some title"
+  [(ngModel)]="title"
+/>
+
+<input
+  type="text"
+  class="form-control"
+  placeholder="Some text"
+  [(ngModel)]="text"
+/>
+
+<button mat-raised-button color="primary" (click)="createNewPost()">
+  Create new post
+</button>

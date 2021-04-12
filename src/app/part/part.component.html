@@ -1,6 +1,11 @@
 <p>Hello part</p>
-
+<img class="small" [src]="angular" alt="" />
+<img class="small" src="{{ angular }}" alt="" />
 <div class="example-button-row">
-  <button mat-raised-button color="primary" (click)="onClick()">Click me</button>
-  <p><strong>{{someText}}</strong></p>
+  <button mat-raised-button color="primary" (click)="onClick()">
+    Click me
+  </button>
+  <p>
+    <strong>{{ someText }}</strong>
+  </p>
 </div>

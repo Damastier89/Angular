@@ -4,3 +4,9 @@ export interface User {
     age: number
     deposit: number
 }
+export interface Post {
+  title: string
+  text: string
+  subtext?: string
+  id?: number
+}

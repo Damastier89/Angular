@@ -13,14 +13,16 @@ import { UsersComponent } from './users/users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { PostFormComponent } from './post-form/post-form.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     PostComponent,
     PartComponent,
@@ -30,7 +32,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
       NgClassAndStyleComponent,
       PipComponent,
       UsersComponent,
-      DatepickerComponent
+      DatepickerComponent,
+      PostFormComponent
    ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
     MatIconModule,
     MatDatepickerModule,
     MatFormFieldModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

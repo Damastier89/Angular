@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import { Post } from '../interfaces';
 
 @Component({
     selector: 'app-post',
@@ -8,13 +9,7 @@ import {Component} from '@angular/core';
 
 export class PostComponent {
 
-    angular = 'https://cms-assets.tutsplus.com/uploads/users/12/posts/18754/preview_image/angular-js.png'
-    react = 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/320px-React-icon.svg.png'
+  @Input() myData!: Post
 
-    constructor () {
-        setTimeout(()=>{
-            console.log('Timeout is over');
-            this.angular = this.react
-            }, 5000);
-    }
+
 }
