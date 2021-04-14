@@ -13,7 +13,7 @@ import { UsersComponent } from './users/users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -21,7 +21,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ServiceModulComponent } from './service-modul/service-modul.component';
 import { PostFormComponent } from './post-form/post-form.component';
-import { CountService } from './service/count.service';
+import { FormValidateComponent } from './form-validate/form-validate.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CountService } from './service/count.service';
       DatepickerComponent,
       PostFormComponent,
       ServiceModulComponent,
+      FormValidateComponent,
    ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { CountService } from './service/count.service';
     MatFormFieldModule,
     MatNativeDateModule,
     FormsModule,
-    CountService
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,7 +13,7 @@
 
   <hr />
   <!-- //////////////////////////////////////////// -->
-  <app-post-form (addNewPost)="updatePosts($event)"></app-post-form>
+  <app-post-form (addNewPost)="updatePost($event)"></app-post-form>
   <app-post *ngFor="let data of posts" [myData]="data"></app-post>
 
   <hr />
@@ -56,16 +56,48 @@
 
   <div>
     <h2>Service</h2>
-    
-    <h3>Counter: {{count.counter}}</h3>
-    <button mat-raised-button color="primary" class="btn" (click)="count.increase()">+</button>
-    <button mat-raised-button color="primary" class="btn" (click)="count.decrease()">-</button>
 
-    <h3>Local Counter: {{localCounter.counter}}</h3>
-    <button mat-raised-button color="primary" class="btn" (click)="localCounter.increase()">+</button>
-    <button mat-raised-button color="primary" class="btn" (click)="localCounter.decrease()">-</button>
+    <h3>Counter: {{ count.counter }}</h3>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      (click)="count.increase()"
+    >
+      +
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      (click)="count.decrease()"
+    >
+      -
+    </button>
+
+    <h3>Local Counter: {{ localCounter.counter }}</h3>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      (click)="localCounter.increase()"
+    >
+      +
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      (click)="localCounter.decrease()"
+    >
+      -
+    </button>
 
     <app-service-modul></app-service-modul>
-
   </div>
+
+  <hr />
+  <!-- //////////////////Form-validate//////////////////// -->
+
+  <app-form-validate></app-form-validate>
 </div>

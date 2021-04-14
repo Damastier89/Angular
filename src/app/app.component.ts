@@ -32,5 +32,9 @@ public onInput(event: KeyboardEvent){
   this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
 }
 
+updatePost(newPost: Post) {
+  this.posts.unshift(newPost)
+}
+
 
 }
