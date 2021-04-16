@@ -63,15 +63,21 @@ img {
   margin-top: 0.3rem;
   margin-bottom: .5rem;
 
-  label {
+label {
     display: block;
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: .5rem;
   }
 
-  input {
+input {
     margin-bottom: 0;
+    &.ng-invalid.ng-touched {
+      border: 2px solid red;
+    }
+    &.ng-valid.ng-touched {
+      border: 2px solid green;
+    }
   }
 
   .validation {
