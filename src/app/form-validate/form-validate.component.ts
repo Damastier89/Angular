@@ -19,11 +19,15 @@ export class FormValidateComponent implements OnInit {
       password: new FormControl(null, [
         Validators.required,
         Validators.minLength(6)
-      ])
+      ]),
+      address: new FormGroup({
+        country: new FormControl('ru'),
+        city: new FormControl('', Validators.required)
+      })
     })
   }
 
-  submit() {
+  public submit(): void {
     if (this.form.valid) {
       console.log('Form: ', this.form)
       const formData = {...this.form.value}
@@ -31,5 +35,22 @@ export class FormValidateComponent implements OnInit {
       console.log('Form Data:', formData)
     }
   }
+
+  public setCapital(){
+    const cityMap : any = {
+      ru: 'Москва',
+      ua: 'Киев',
+      by: 'Минск'
+    }
+
+    const cityKey = this.form.get('address')?.get('country')?.value
+    const city = cityMap[cityKey]
+
+    this.form.patchValue({
+      address: {city: city}
+    })
+  }
+
+
 
 }
