@@ -7,15 +7,19 @@
       <input type="text" placeholder="Email" formControlName="email" />
 
       <div
-        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        *ngIf="emailControl.invalid && emailControl.touched"
         class="validation"
       >
-        <small *ngIf="form.get('email')?.errors?.required">
+        <small *ngIf="emailControl.errors?.required">
           Поле email не может быть пустым
         </small>
 
-        <small *ngIf="form.get('email')?.errors?.email">
+        <small *ngIf="emailControl.errors?.email">
           Введите корректный email
+        </small>
+
+        <small *ngIf="emailControl.errors?.restrictedEmail">
+          Email {{ emailControl.value }} не доступен
         </small>
       </div>
     </div>
@@ -25,18 +29,18 @@
       <input type="password" placeholder="Пароль" formControlName="password" />
 
       <div
-        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        *ngIf="passwordControl.invalid && passwordControl.touched"
         class="validation"
       >
-        <small *ngIf="form.get('password')?.errors?.required">
+        <small *ngIf="passwordControl.errors?.required">
           Пароль не может быть пустым
         </small>
 
-        <small *ngIf="form.get('password')?.errors?.minlength">
+        <small *ngIf="passwordControl.errors?.minlength">
           Длинна должна быть не менее
-          {{ form.get("password")?.errors?.minlength?.requiredLength }}
+          {{ passwordControl.errors?.minlength?.requiredLength }}
           символов. Сейчас количество символов
-          {{ form.get("password")?.errors?.minlength?.actualLength }}
+          {{ passwordControl.errors?.minlength?.actualLength }}
         </small>
       </div>
     </div>
@@ -69,14 +73,23 @@
       </button>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="skills">
       <h2>Ваши навыки</h2>
-      <button mat-raised-button color="primary" class="btn" type="button">
+      <button
+        (click)="addSkill()"
+        mat-raised-button
+        color="primary"
+        class="btn"
+        type="button"
+      >
         Добавить умение
       </button>
-      <div class="form-control">
-        <label></label>
-        <input type="text" />
+      <div
+        class="form-control"
+        *ngFor="let control of skillsControl.controls; let i = index"
+      >
+        <label>Skills {{ i + 1 }}</label>
+        <input type="text" [formControlName]="i" />
       </div>
     </div>
 

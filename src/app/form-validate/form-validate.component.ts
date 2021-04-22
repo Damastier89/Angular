@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MainValidator } from './main-validator';
 
 @Component({
   selector: 'app-form-validate',
@@ -14,7 +15,8 @@ export class FormValidateComponent implements OnInit {
     this.form = new FormGroup({
       email: new FormControl('', [
         Validators.email,
-        Validators.required
+        Validators.required,
+        MainValidator.restrictedEmail
       ]),
       password: new FormControl(null, [
         Validators.required,
@@ -23,8 +25,21 @@ export class FormValidateComponent implements OnInit {
       address: new FormGroup({
         country: new FormControl('ru'),
         city: new FormControl('', Validators.required)
-      })
+      }),
+      skills: new FormArray([])
     })
+  }
+
+  public get skillsControl(): FormArray {
+    return this.form.get('skills') as FormArray;
+  }
+
+  public get emailControl(): FormControl {
+    return this.form.get('email') as FormControl;
+  }
+
+  public get passwordControl(): FormControl {
+    return this.form.get('password') as FormControl;
   }
 
   public submit(): void {
@@ -33,10 +48,12 @@ export class FormValidateComponent implements OnInit {
       const formData = {...this.form.value}
 
       console.log('Form Data:', formData)
+
+      this.form.reset()
     }
   }
 
-  public setCapital(){
+  public setCapital(): void {
     const cityMap : any = {
       ru: 'Москва',
       ua: 'Киев',
@@ -51,6 +68,10 @@ export class FormValidateComponent implements OnInit {
     })
   }
 
-
+  public addSkill(): void{
+    const control: any = new FormControl('', Validators.required);
+    /* (<FormArray>this.form.get('skills'))?.push(control) */
+    (this.form.get('skills') as FormArray).push(control)
+  }
 
 }

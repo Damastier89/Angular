@@ -10,3 +10,7 @@ export interface Post {
   subtext?: string
   id?: number
 }
+
+export interface validation {
+  [key: string]: boolean
+}

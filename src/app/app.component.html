@@ -1,10 +1,17 @@
 <div class="container">
   <h1>Hello Angular</h1>
 
-  <!-- //////////////////Form-validate//////////////////// -->
+  <app-switch
+    [(ngModel)]="appState"
+    (ngModelChange)="handerChange()"
+  ></app-switch>
 
-  <app-form-validate></app-form-validate>
+  <p>AppState: {{ appState }}</p>
+  <!-- //////////////////////////////////////////// -->
+  <hr />
 
+  <app-tabs></app-tabs>
+  <!-- //////////////////////////////////////////// -->
   <hr />
 
   <input type="text" (keyup)="onInput($event)" />
@@ -12,53 +19,14 @@
     <strong>{{ inputValue }}</strong>
   </p>
 
-  <hr />
   <!-- //////////////////////////////////////////// -->
-
-  <app-part></app-part>
-
   <hr />
-  <!-- //////////////////////////////////////////// -->
+
   <app-post-form (addNewPost)="updatePost($event)"></app-post-form>
   <app-post *ngFor="let data of posts" [myData]="data"></app-post>
 
-  <hr />
-  <!-- //////////////////////////////////////////// -->
-
-  <app-ngClassAndStyle></app-ngClassAndStyle>
-
-  <hr />
-  <!-- ///////////////////ngIF///////////////////////// -->
-
-  <app-ngIF></app-ngIF>
-
-  <hr />
-  <!-- ////////////////////ngSwitch//////////////////////// -->
-
-  <app-ngSwitch></app-ngSwitch>
-
-  <hr />
-  <!-- ////////////////////*ngFor//////////////////////// -->
-
-  <app-ngFor></app-ngFor>
-
-  <hr />
-  <!-- ////////////////////Pip//////////////////////// -->
-
-  <app-Pip></app-Pip>
-
-  <hr />
-  <!-- //////////////////////////////////////////// -->
-
-  <app-users></app-users>
-
-  <hr />
-  <!-- //////////////////Datepicker//////////////////// -->
-
-  <app-datepicker></app-datepicker>
-
-  <hr />
   <!-- //////////////////Service//////////////////// -->
+  <hr />
 
   <div>
     <h2>Service</h2>
@@ -101,4 +69,6 @@
 
     <app-service-modul></app-service-modul>
   </div>
+
+  <hr />
 </div>

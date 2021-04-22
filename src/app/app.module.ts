@@ -22,7 +22,9 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ServiceModulComponent } from './service-modul/service-modul.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormValidateComponent } from './form-validate/form-validate.component';
-
+import { SwitchComponent } from './switch/switch.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { FormValidateComponent } from './form-validate/form-validate.component';
       PostFormComponent,
       ServiceModulComponent,
       FormValidateComponent,
+      SwitchComponent,
+      TabsComponent,
    ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { FormValidateComponent } from './form-validate/form-validate.component';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,15 +13,14 @@ import { LocalCounterService } from './service/local-counter.service';
 })
 export class AppComponent {
 
-  posts: Post[] = [
+  public posts: Post[] = [
     {title: 'JavaScript', text: 'I am learn JavaScript', id: 1},
     {title: 'Angular', text: 'I am learn Angular', id: 2},
     {title: 'TypeScript', text: 'I am learn TypeScript', id: 3}
   ]
-
-    inputValue = '';
-
-    toggle: any = false;
+  public toggle: any = false;
+  public appState: string = 'on'
+  public inputValue: string = '';
 
 constructor(
   public readonly count: CountService,
@@ -32,8 +31,12 @@ public onInput(event: KeyboardEvent){
   this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
 }
 
-updatePost(newPost: Post) {
+public updatePost(newPost: Post) {
   this.posts.unshift(newPost)
+}
+
+public handerChange(): void {
+  console.log(this.appState)
 }
 
 
