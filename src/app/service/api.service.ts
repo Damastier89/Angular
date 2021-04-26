@@ -12,7 +12,7 @@ export class ApiService {
     private readonly http: HttpClient,
   ){}
 
-  public getFakeApi(): Observable<Post[]> {
+  /* public getFakeApi(): Observable<Post[]> {
     return this.http.get<Post[]>("https://jsonplaceholder.typicode.com/posts")
-  }
+  } */
 }

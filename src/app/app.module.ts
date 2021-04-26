@@ -25,6 +25,7 @@ import { FormValidateComponent } from './form-validate/form-validate.component';
 import { SwitchComponent } from './switch/switch.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TabsComponent } from './tabs/tabs.component';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { TabsComponent } from './tabs/tabs.component';
       FormValidateComponent,
       SwitchComponent,
       TabsComponent,
+      HttpComponent,
    ],
   imports: [
     BrowserModule,

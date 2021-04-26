@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Post } from './interfaces';
+import { ApiService } from './service/api.service';
 import { CountService } from './service/count.service';
 import { LocalCounterService } from './service/local-counter.service';
 
@@ -21,11 +22,18 @@ export class AppComponent {
   public toggle: any = false;
   public appState: string = 'on'
   public inputValue: string = '';
+  public downloadPost: Post[] = [];
 
 constructor(
+  public readonly localCounter: LocalCounterService,
   public readonly count: CountService,
-  public readonly localCounter: LocalCounterService
+ /*  private readonly post: ApiService */
+
 ) {}
+
+ngOnInit(): void {
+  /* this.getFakePost() */
+}
 
 public onInput(event: KeyboardEvent){
   this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
@@ -38,6 +46,12 @@ public updatePost(newPost: Post) {
 public handerChange(): void {
   console.log(this.appState)
 }
+
+/* public getFakePost() {
+  this.post.getFakeApi().subscribe({
+    next:(res) => this.downloadPost = res
+  })
+} */
 
 
 }
