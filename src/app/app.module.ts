@@ -26,6 +26,7 @@ import { SwitchComponent } from './switch/switch.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TabsComponent } from './tabs/tabs.component';
 import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { HttpComponent } from './http/http.component';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatTabsModule
   ],
   providers: [],

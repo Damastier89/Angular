@@ -11,16 +11,16 @@ export class PostFormComponent implements OnInit {
  @Output() addNewPost: EventEmitter<Post> = new EventEmitter<Post>()
 
   title = ''
-  text = ''
+  body = ''
 
   createNewPost(){
-    if(this.title.trim() && this.text.trim()) {
+    if(this.title.trim() && this.body.trim()) {
       const newPost: Post = {
         title: this.title,
-        text: this.text
+        body: this.body
       }
       this.addNewPost.emit(newPost)
-      this.title = this.text = ''
+      this.title = this.body = ''
     }
   }
 

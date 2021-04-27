@@ -15,10 +15,10 @@ import { LocalCounterService } from './service/local-counter.service';
 export class AppComponent {
 
   public posts: Post[] = [
-    {title: 'JavaScript', text: 'I am learn JavaScript', id: 1},
-    {title: 'Angular', text: 'I am learn Angular', id: 2},
-    {title: 'TypeScript', text: 'I am learn TypeScript', id: 3}
-  ]
+    {title: 'JavaScript', body: "I learn JavaScript", userId: 1},
+    {title: 'TypeScript', body: "I learn TypeScript", userId: 2},
+    {title: 'Angular', body: "I learn Angular", userId: 3}
+  ];
   public toggle: any = false;
   public appState: string = 'on'
   public inputValue: string = '';
@@ -27,13 +27,11 @@ export class AppComponent {
 constructor(
   public readonly localCounter: LocalCounterService,
   public readonly count: CountService,
- /*  private readonly post: ApiService */
+  private readonly post: ApiService
 
 ) {}
 
-ngOnInit(): void {
-  /* this.getFakePost() */
-}
+ngOnInit(): void {}
 
 public onInput(event: KeyboardEvent){
   this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
@@ -47,11 +45,11 @@ public handerChange(): void {
   console.log(this.appState)
 }
 
-/* public getFakePost() {
+public getFakePost() {
   this.post.getFakeApi().subscribe({
     next:(res) => this.downloadPost = res
   })
-} */
+}
 
 
 }

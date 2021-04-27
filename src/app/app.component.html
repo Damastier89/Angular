@@ -23,7 +23,14 @@
   <hr />
 
   <app-post-form (addNewPost)="updatePost($event)"></app-post-form>
+
   <app-post *ngFor="let data of posts" [myData]="data"></app-post>
+
+  <button mat-raised-button color="primary" class="btn" (click)="getFakePost()">
+    Get post
+  </button>
+
+  <app-post *ngFor="let item of downloadPost" [myData]="item"></app-post>
 
   <!-- //////////////////Service//////////////////// -->
   <hr />

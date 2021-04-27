@@ -1,3 +1,17 @@
 button {
   margin: 10px;
 }
+
+.form-control {
+  display: block;
+  padding: 5px;
+  margin:5px 5px;
+  width: 300px;
+}
+
+.card {
+  border: 1px dashed black;
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+}

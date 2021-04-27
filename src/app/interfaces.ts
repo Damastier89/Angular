@@ -6,9 +6,8 @@ export interface User {
 }
 export interface Post {
   title: string
-  text: string
-  subtext?: string
-  id?: number
+  body: string
+  userId?: number
 }
 
 export interface validation {
