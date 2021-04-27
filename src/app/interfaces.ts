@@ -10,6 +10,13 @@ export interface Post {
   userId?: number
 }
 
+export interface Todo {
+  completed: boolean
+  title: string
+  id?: number
+  
+}
+
 export interface validation {
   [key: string]: boolean
 }
