@@ -13,8 +13,8 @@ export interface Post {
 export interface Todo {
   completed: boolean
   title: string
-  id?: number
-  
+  id: number
+  userId?: number
 }
 
 export interface validation {
