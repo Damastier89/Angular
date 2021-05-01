@@ -1,3 +1,4 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../interfaces';
 import { ApiService } from '../service/api.service';
@@ -13,6 +14,7 @@ export class HttpComponent implements OnInit {
   public todoTitle: string = '';
   public todoId!: number;
   public loading: boolean = false;
+  public errorMsg: string = '';
 
   constructor(
     private readonly api: ApiService,
@@ -43,6 +45,8 @@ export class HttpComponent implements OnInit {
     .subscribe(response => {
       this.todos = response;
       this.loading = false;
+    }, error => {
+      this.errorMsg = error.message;
     })
   }
 
@@ -50,6 +54,13 @@ export class HttpComponent implements OnInit {
     this.api.removingTodo(id)
     .subscribe( response => {
       this.todos = this.todos.filter(item => item.id !== id)
+    })
+  }
+
+  public completeTodo(id: number): void {
+    this.api.completedTodo(id)
+    .subscribe(todo => {
+      this.todos.find(element => element.id === todo.id)!.completed = true
     })
   }
 
