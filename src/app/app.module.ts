@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -11,23 +11,29 @@ import { NgClassAndStyleComponent } from './ngClassAndStyle/ngClassAndStyle.comp
 import { PipComponent } from './Pip/Pip.component';
 import { UsersComponent } from './users/users.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatepickerComponent } from './datepicker/datepicker.component';
 import { ServiceModulComponent } from './service-modul/service-modul.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormValidateComponent } from './form-validate/form-validate.component';
 import { SwitchComponent } from './switch/switch.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { TabsComponent } from './tabs/tabs.component';
 import { HttpComponent } from './http/http.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Interceptor } from './service/auth.interceptor';
 
+const INTERSEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: Interceptor,
+  multi: true
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [INTERSEPTOR_PROVIDER],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,7 +20,9 @@ export class HttpComponent implements OnInit {
     private readonly api: ApiService,
     ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.downloadTodo();
+  }
 
   public addTodo(): void {
     if(!this.todoTitle.trim()){
