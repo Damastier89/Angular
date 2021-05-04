@@ -2,7 +2,7 @@
   <mat-tab label="Http">
     <app-http></app-http>
   </mat-tab>
-  
+
   <mat-tab label="Forms">
     <app-form-validate></app-form-validate>
   </mat-tab>
@@ -37,5 +37,29 @@
 
   <mat-tab label="datepicker">
     <app-datepicker></app-datepicker>
+  </mat-tab>
+
+  <mat-tab label="App-switch">
+    <app-switch
+      [(ngModel)]="appState"
+      (ngModelChange)="handerChange()"
+    ></app-switch>
+    <p>AppState: {{ appState }}</p>
+  </mat-tab>
+  <mat-tab label="Posts">
+    <app-post-form (addNewPost)="updatePost($event)"></app-post-form>
+
+    <app-post *ngFor="let data of posts" [myData]="data"></app-post>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="btn"
+      (click)="getFakePost()"
+    >
+      Get post
+    </button>
+
+    <app-post *ngFor="let item of downloadPost" [myData]="item"></app-post>
   </mat-tab>
 </mat-tab-group>

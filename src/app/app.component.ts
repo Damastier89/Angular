@@ -14,21 +14,12 @@ import { LocalCounterService } from './service/local-counter.service';
 })
 export class AppComponent {
 
-  public posts: Post[] = [
-    {title: 'JavaScript', body: "I learn JavaScript", userId: 1},
-    {title: 'TypeScript', body: "I learn TypeScript", userId: 2},
-    {title: 'Angular', body: "I learn Angular", userId: 3}
-  ];
   public toggle: any = false;
-  public appState: string = 'on'
   public inputValue: string = '';
-  public downloadPost: Post[] = [];
 
 constructor(
   public readonly localCounter: LocalCounterService,
   public readonly count: CountService,
-  private readonly post: ApiService
-
 ) {}
 
 ngOnInit(): void {}
@@ -36,20 +27,5 @@ ngOnInit(): void {}
 public onInput(event: KeyboardEvent){
   this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
 }
-
-public updatePost(newPost: Post) {
-  this.posts.unshift(newPost)
-}
-
-public handerChange(): void {
-  console.log(this.appState)
-}
-
-public getFakePost() {
-  this.post.getFakeApi().subscribe({
-    next:(res) => this.downloadPost = res
-  })
-}
-
 
 }
