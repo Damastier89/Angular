@@ -1,57 +1,23 @@
+<nav class="navbar">
+  <h1>
+    <a [routerLink]="['/']">Angular Routing</a>
+  </h1>
+  <ul>
+    <li class="active">
+      <a [routerLink]="['/']">Home</a>
+    </li>
+    <li><a routerLink="/form">Form</a></li>
+    <li><a [routerLink]="['/postForm']">Post Form</a></li>
+    <li><button class="btn">Login</button></li>
+    <li><button class="btn">Logout</button></li>
+  </ul>
+</nav>
+
 <div class="container">
-  <h1>Hello Angular</h1>
-
-  <app-tabs></app-tabs>
-
-  <input type="text" (keyup)="onInput($event)" />
-  <p>
-    <strong>{{ inputValue }}</strong>
-  </p>
-
-  <!-- //////////////////Service//////////////////// -->
-  <hr />
-
-  <div>
-    <h2>Service</h2>
-
-    <h3>Counter: {{ count.counter }}</h3>
-    <button
-      mat-raised-button
-      color="primary"
-      class="btn"
-      (click)="count.increase()"
-    >
-      +
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      class="btn"
-      (click)="count.decrease()"
-    >
-      -
-    </button>
-
-    <h3>Local Counter: {{ localCounter.counter }}</h3>
-    <button
-      mat-raised-button
-      color="primary"
-      class="btn"
-      (click)="localCounter.increase()"
-    >
-      +
-    </button>
-    <button
-      mat-raised-button
-      color="primary"
-      class="btn"
-      (click)="localCounter.decrease()"
-    >
-      -
-    </button>
-
-    <app-service-modul></app-service-modul>
+  <div class="card">
+    <h1>Hello Angular</h1>
+      <router-outlet></router-outlet>
+  <!-- <app-tabs></app-tabs> -->
   </div>
-
-  <hr />
 </div>
+

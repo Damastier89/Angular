@@ -62,4 +62,48 @@
 
     <app-post *ngFor="let item of downloadPost" [myData]="item"></app-post>
   </mat-tab>
+
+  <mat-tab label="Secvice">
+    <div>
+      <h2>Service</h2>
+  
+      <h3>Counter: {{ count.counter }}</h3>
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn"
+        (click)="count.increase()"
+      >
+        +
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn"
+        (click)="count.decrease()"
+      >
+        -
+      </button>
+  
+      <h3>Local Counter: {{ localCounter.counter }}</h3>
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn"
+        (click)="localCounter.increase()"
+      >
+        +
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="btn"
+        (click)="localCounter.decrease()"
+      >
+        -
+      </button>
+  
+      <app-service-modul></app-service-modul>
+    </div>
+  </mat-tab>
 </mat-tab-group>

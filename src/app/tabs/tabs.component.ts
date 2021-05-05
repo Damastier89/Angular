@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../interfaces';
 import { ApiService } from '../service/api.service';
+import { CountService } from '../service/count.service';
+import { LocalCounterService } from '../service/local-counter.service';
 
 @Component({
   selector: 'app-tabs',
@@ -16,7 +18,11 @@ export class TabsComponent implements OnInit {
   ];
   public appState: string = 'on'
   public downloadPost: Post[] = [];
-  constructor(private readonly post: ApiService) { }
+  
+  constructor(
+    private readonly post: ApiService,
+    public readonly localCounter: LocalCounterService,
+    public readonly count: CountService,) { }
 
   ngOnInit(): void {
   }

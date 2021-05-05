@@ -28,6 +28,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from './service/auth.interceptor';
+import { AppRoutingModule } from './app-routing.module';
 
 const INTERSEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -64,7 +65,8 @@ const INTERSEPTOR_PROVIDER: Provider = {
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTabsModule
+    MatTabsModule,
+    AppRoutingModule
   ],
   providers: [INTERSEPTOR_PROVIDER],
   bootstrap: [AppComponent]

@@ -9,7 +9,11 @@ import { Post } from '../interfaces';
 
 export class PostComponent {
 
+  public inputValue: string = '';
   @Input() myData!: Post
 
+  public onInput(event: KeyboardEvent){
+    this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
+  }
 
 }

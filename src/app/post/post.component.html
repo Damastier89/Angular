@@ -2,3 +2,8 @@
   <h2>{{ myData.title }}</h2>
   <p>{{ myData.body }}</p>
 </div>
+
+<input type="text" (keyup)="onInput($event)" />
+  <p>
+    <strong>{{ inputValue }}</strong>
+  </p>

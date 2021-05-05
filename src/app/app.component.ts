@@ -15,17 +15,11 @@ import { LocalCounterService } from './service/local-counter.service';
 export class AppComponent {
 
   public toggle: any = false;
-  public inputValue: string = '';
-
-constructor(
-  public readonly localCounter: LocalCounterService,
-  public readonly count: CountService,
-) {}
+  
+constructor() {}
 
 ngOnInit(): void {}
 
-public onInput(event: KeyboardEvent){
-  this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
-}
+
 
 }
