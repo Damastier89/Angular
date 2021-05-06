@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import { Post } from '../interfaces';
+import { Post, PostsService } from '../interfaces';
 
 @Component({
     selector: 'app-post',
@@ -11,6 +11,8 @@ export class PostComponent {
 
   public inputValue: string = '';
   @Input() myData!: Post
+
+  constructor(public postsService: PostsService) {}
 
   public onInput(event: KeyboardEvent){
     this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события

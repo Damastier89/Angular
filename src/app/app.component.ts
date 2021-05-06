@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Post } from './interfaces';
-import { ApiService } from './service/api.service';
-import { CountService } from './service/count.service';
+import { Router } from '@angular/router';
 import { LocalCounterService } from './service/local-counter.service';
 
 @Component({
@@ -16,10 +14,12 @@ export class AppComponent {
 
   public toggle: any = false;
   
-constructor() {}
+  constructor( private readonly router: Router) {}
 
-ngOnInit(): void {}
+  ngOnInit(): void {}
 
-
+  public goToForm(): void {
+    this.router.navigate(['/postForm'])
+  }
 
 }
