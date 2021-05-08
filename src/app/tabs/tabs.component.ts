@@ -7,7 +7,10 @@ import { LocalCounterService } from '../service/local-counter.service';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.scss']
+  styleUrls: ['./tabs.component.scss'],
+  providers: [
+    LocalCounterService
+  ]
 })
 export class TabsComponent implements OnInit {
 
@@ -16,15 +19,20 @@ export class TabsComponent implements OnInit {
     {title: 'TypeScript', body: "I learn TypeScript", userId: 2},
     {title: 'Angular', body: "I learn Angular", userId: 3}
   ];
-  public appState: string = 'on'
+  public appState: string = 'on';
+  public inputValue: string = '';
   public downloadPost: Post[] = [];
-  
+
   constructor(
     private readonly post: ApiService,
     public readonly localCounter: LocalCounterService,
     public readonly count: CountService,) { }
 
   ngOnInit(): void {
+  }
+
+  public onInput(event: KeyboardEvent){
+    this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
   }
 
   public handerChange(): void {

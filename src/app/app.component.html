@@ -1,30 +1,33 @@
 <nav class="navbar">
-  <h1>
-    <a [routerLink]="['/']">Angular Routing</a>
-  </h1>
+  <h1><a [routerLink]="['/']">Angular</a></h1>
+
   <ul>
-    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
       <a [routerLink]="['/']">Home</a>
     </li>
     <li routerLinkActive="active">
-      <a routerLink="/form">Form</a>
+      <a [routerLink]="['/post']">About</a>
     </li>
-    <li routerLinkActive="active">
-      <a [routerLink]="['/postForm']">Post Form</a>
-    </li>
-    <li><button class="btn">Login</button></li>
-    <li><button class="btn">Logout</button></li>
   </ul>
+
+  <button mat-button [matMenuTriggerFor]="menu">Navigation</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/form">Form</button>
+    <button mat-menu-item routerLink="/post_form">Post form</button>
+    <button mat-menu-item [routerLink]="['/post']">Post</button>
+    <button mat-menu-item routerLink="/datepicker">Datepicker</button>
+    <button mat-menu-item routerLink="/http">Http</button>
+    <button mat-menu-item routerLink="/style">Style and Class</button>
+    <button mat-menu-item routerLink="/for">NgFor</button>
+    <button mat-menu-item routerLink="/if">NgIf</button>
+    <button mat-menu-item routerLink="/ng_switch">NgSwitch</button>
+    <button mat-menu-item routerLink="/img">Img</button>
+    <button mat-menu-item routerLink="/pipe">Pipe</button>
+    <button mat-menu-item routerLink="/switch">Switch</button>
+    <button mat-menu-item routerLink="/tabs">Tabs</button>
+  </mat-menu>
 </nav>
 
 <div class="container">
-  <div class="card">
-    <h1>Hello Angular</h1>
-      <router-outlet></router-outlet>
-  <!-- <app-tabs></app-tabs> -->
-  <div>
-    <button class="btn" (click)="goToForm()">Go to form</button>
-  </div> 
-  </div>
+  <router-outlet></router-outlet>
 </div>
-

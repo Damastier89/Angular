@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import { Router } from '@angular/router';
 import { Post, PostsService } from '../interfaces';
 
 @Component({
@@ -9,13 +10,15 @@ import { Post, PostsService } from '../interfaces';
 
 export class PostComponent {
 
-  public inputValue: string = '';
   @Input() myData!: Post
 
-  constructor(public postsService: PostsService) {}
+  constructor(
+    public postsService: PostsService,
+    private readonly router: Router
+    ) {}
 
-  public onInput(event: KeyboardEvent){
-    this.inputValue = (<HTMLInputElement>event.target).value; // KeyboardEvent - тип события
+  public goToForm(): void {
+    this.router.navigate(['/form'])
   }
 
 }

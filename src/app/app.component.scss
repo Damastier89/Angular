@@ -12,12 +12,15 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+
 }
 
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
+  background: url(./img/widewp_1283.jpg);
+  min-height: 85vh;
 }
 
 a {
@@ -38,7 +41,7 @@ img {
 
 .btn {
   display: inline-block;
-  background: #333333;
+  background: #12a526;
   color: #fff;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
@@ -129,12 +132,12 @@ hr {
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
-  background: #dc3545;
+  background: #355cdc;
   color: #fff;
 
   ul {
     display: flex;
-    
+
     li.active a {
       font-weight: bold;
       color: #333333;

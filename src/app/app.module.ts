@@ -29,6 +29,8 @@ import { HttpComponent } from './http/http.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from './service/auth.interceptor';
 import { AppRoutingModule } from './app-routing.module';
+import { MatMenuModule } from '@angular/material/menu';
+import { HomeComponent } from './home/home.component';
 
 const INTERSEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -53,6 +55,7 @@ const INTERSEPTOR_PROVIDER: Provider = {
       SwitchComponent,
       TabsComponent,
       HttpComponent,
+      HomeComponent
    ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ const INTERSEPTOR_PROVIDER: Provider = {
     ReactiveFormsModule,
     HttpClientModule,
     MatTabsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatMenuModule
   ],
   providers: [INTERSEPTOR_PROVIDER],
   bootstrap: [AppComponent]
